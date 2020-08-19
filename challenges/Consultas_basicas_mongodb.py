@@ -128,7 +128,7 @@ usuarios = [{
         }
     }]
 
-client = pymongo.MongoClient("mongodb+srv://admin:admin@test-oauly.gcp.mongodb.net/test?retryWrites=true&w=majority")
+client = pymongo.MongoClient("")
 db = client.test
 
 # Agregar los usuarios
