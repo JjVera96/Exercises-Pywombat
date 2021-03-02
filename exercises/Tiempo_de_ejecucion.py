@@ -1,21 +1,19 @@
 import time
 
-def execution_time(function):
+def total_time(function):
 
     def wrapper(*args, **kwargs):
         start_time = time.time()
         result = function(*args, **kwargs)
         end_time = time.time()
-        print('Tiempo de ejecución: {} ms'.format(end_time-start_time))
+        print('Segundos transcurridos: {}s'.format(round(end_time-start_time)))
         return result
 
     return wrapper
 
-@execution_time
-def super_task():
-    import time
+@total_time
+def suma(a, b):
+    time.sleep(3)
+    return a + b
 
-    time.sleep(1)
-    return 10
-
-super_task()
+suma(10,20)
