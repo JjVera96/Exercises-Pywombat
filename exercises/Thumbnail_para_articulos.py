@@ -9,10 +9,8 @@ if __name__ == '__main__':
     size = (1000, 300)
     image = Image.new('RGBA', size, color)
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype('/usr/share/fonts/truetype/roboto/hinted/Roboto-Bold.ttf', 65)
+    font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerif.ttf', 65)
     name = './resources/{}.png'.format(text.replace(' ', '_'))
-    text_width, text_height = draw.textsize(text, font)
-    print(text_width, text_height)
-
-    image.show()
+    size_font = draw.textsize(text, font)
+    draw.text( ( (size[0] // 2) - (size_font[0] // 2), size[1] // 2 - size_font[1] // 2 ), text , (255, 255, 255), font=font)
     image.save(name)
