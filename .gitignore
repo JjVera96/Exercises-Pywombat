@@ -1,4 +1,3 @@
-.venv/
 resources/
-venv/
+env/
 .vscode/
