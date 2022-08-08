@@ -49,11 +49,14 @@ if __name__ == '__main__':
         if '<' in age: 
             if input_age < int(age.split('<')[1]):
                 result = movie
+                break
         elif '>' in age:
             if input_age > int(age.split('>')[1]):
                 result = movie
+                break
         else:
             start, end = age.split(' -- ')
             if int(start) < input_age and input_age < int(end):
                 result = movie
+                break
     print(result)
